@@ -3,5 +3,5 @@ services:
   testing:
     build:
       context: .
-    image: testing.testing.dnp.dappnode.eth:0.0.6
+    image: testing.testing.dnp.dappnode.eth:0.0.7
     restart: unless-stopped
