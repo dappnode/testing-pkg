@@ -1,0 +1,12 @@
+{
+  "name": "testing.dnp.dappnode.eth",
+  "version": "0.0.6",
+  "description": "testing-repo.public.dappnode.eth description",
+  "type": "service",
+  "author": "dappnode",
+  "categories": ["Developer tools"],
+  "links": {
+    "homepage": "https://your-project-homepage-or-docs.io"
+  },
+  "license": "GPL-3.0"
+}

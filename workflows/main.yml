@@ -1,0 +1,28 @@
+name: "Main"
+on:
+  pull_request:
+  push:
+    branches:
+      - "main"
+      - "master"
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    name: Build test
+    if: github.event_name != 'push'
+    steps:
+      - uses: actions/checkout@v3
+      - run: npx @dappnode/dappnodesdk build --skip_save
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Publish
+        run: npx @dappnode/dappnodesdk publish patch --dappnode_team_preset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEVELOPER_ADDRESS: "0xd0C608C9a86229a7d16Cb8a97314AcE4f8E1e1F0"

@@ -1,0 +1,7 @@
+version: "3.5"
+services:
+  testing:
+    build:
+      context: .
+    image: testing.testing.dnp.dappnode.eth:0.0.6
+    restart: unless-stopped
